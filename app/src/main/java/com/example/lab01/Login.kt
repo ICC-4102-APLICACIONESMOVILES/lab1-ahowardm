@@ -1,5 +1,6 @@
 package com.example.lab01
 
+import android.app.Activity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -12,8 +13,11 @@ class Login : AppCompatActivity() {
     lateinit var usernameEditText: EditText
     lateinit var passwordEditText: EditText
     lateinit var loginButton: Button
-    var username: String = ""
-    var password: String = ""
+
+    companion object {
+        val username = "username"
+        val password = "password"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,15 +29,15 @@ class Login : AppCompatActivity() {
     }
 
     private fun login() {
-        username = usernameEditText.text.toString()
-        password = passwordEditText.text.toString()
+        var username = usernameEditText.text.toString()
+        var password = passwordEditText.text.toString()
         if (isEmailValid(username) && !password.equals("")){
 
             Toast.makeText(this, "Valid login info", Toast.LENGTH_SHORT).show()
-            //var intent = getIntent()
-            //intent.putExtra("username", username)
-            //intent.putExtra("password", password)
-
+            var result = Intent()
+            result.putExtra("username", username)
+            result.putExtra("password", password)
+            setResult(Activity.RESULT_OK, result)
             finish()
         }
     }
