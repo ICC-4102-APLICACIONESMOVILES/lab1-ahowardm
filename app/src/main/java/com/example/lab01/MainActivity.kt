@@ -4,12 +4,14 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Button
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var usernameTextView: TextView
     lateinit var passwordTextView: TextView
+    lateinit var logoutButton: Button
     val LOGIN_REQUEST = 1
     var loggedIn: Boolean = false
 
@@ -18,6 +20,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         getUIReferences()
         goToNextActivity()
+        logoutButton.setOnClickListener{
+            logout()
+        }
+    }
+
+    private fun logout() {
+        recreate()
     }
 
     private fun goToNextActivity() {
@@ -28,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     private fun getUIReferences() {
         usernameTextView = findViewById(R.id.usernameTextView)
         passwordTextView = findViewById(R.id.passwordTextView)
+        logoutButton = findViewById(R.id.logoutButton)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
