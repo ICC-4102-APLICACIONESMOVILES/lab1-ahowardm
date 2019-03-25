@@ -48,6 +48,9 @@ class Login : AppCompatActivity() {
         loginButton = findViewById(R.id.loginButton)
     }
 
+    /**
+     * Este metodo fue buscado en internet para validar direcciones de email.
+     */
     fun isEmailValid(email: String): Boolean {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }

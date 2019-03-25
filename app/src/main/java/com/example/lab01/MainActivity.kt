@@ -44,9 +44,8 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == LOGIN_REQUEST){
             if (resultCode == RESULT_OK){
-                Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT)
-                var username = data?.getStringExtra(Login.username).toString()
-                usernameTextView.text = username
+                // Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT)
+                usernameTextView.text = data?.getStringExtra(Login.username).toString()
                 passwordTextView.text = data?.getStringExtra(Login.password).toString()
             }
         }
