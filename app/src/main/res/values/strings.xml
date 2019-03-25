@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lab01</string>
+    <string name="empty_username">Username</string>
+    <string name="empty_password">Password</string>
+    <string name="usernamePlaceHolder">Ingresa tu username</string>
+    <string name="passwordPlaceHolder">Ingresa tu contraseña</string>
+    <string name="loginButton">Login</string>
+    <string name="validLoginInfo">Correct username and password</string>
+</resources>
