@@ -50,6 +50,7 @@ class Login : AppCompatActivity() {
 
     /**
      * Este metodo fue buscado en internet para validar direcciones de email.
+     * Fuente: https://gist.github.com/ironic-name/f8e8479c76e80d470cacd91001e7b45b
      */
     fun isEmailValid(email: String): Boolean {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
